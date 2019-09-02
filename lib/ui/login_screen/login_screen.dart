@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn_english_app/ui/complete_quiz_screen/complete_quiz_screen.dart';
 
 class LoginScreen extends StatefulWidget {
 
@@ -125,7 +126,10 @@ class _LoginState extends State<LoginScreen> {
                       textColor: Colors.black,
                       elevation: 4.0,
                       onPressed: () {
-                        print('Pressed');
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context)
+                          => CompleteQuizScreen()),
+                        );
                       }
                   )
               ),
