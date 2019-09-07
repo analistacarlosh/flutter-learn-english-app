@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn_english_app/common_widget/send_button.dart';
 
 import '../../style.dart';
 
@@ -96,32 +97,9 @@ class _CompleteQuizScreen extends State<CompleteQuizScreen> {
             ],
           ),
         ),
-        bottomNavigationBar:
-        Padding(padding: defaultPadding.copyWith(bottom: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              FloatingActionButton(
-                key: Key('button_arrow_back'),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Icon(Icons.arrow_back),
-                backgroundColor: Colors.indigoAccent,
-                heroTag: null,
-              ),
-              FloatingActionButton(
-                key: Key('button_arrow_forward'),
-                onPressed: () {
-                  print('pressed');
-                },
-                child: Icon(Icons.arrow_forward),
-                backgroundColor: Colors.indigoAccent,
-                heroTag: null,
-              )
-            ],
-          ),
-        )
+        bottomNavigationBar: SendButton(() {
+          print('pressed');
+        }, 'Send')
     );
   }
 }
